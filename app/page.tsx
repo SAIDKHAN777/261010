@@ -636,7 +636,7 @@ function SkillSpheresNetwork({ scrollProgress, opacity }: SkillSpheresNetworkPro
       >
         <KineticText
           as="h2"
-          className="font-sans text-[clamp(2.25rem,5vw,5.5rem)] font-semibold tracking-[0.15em] text-white uppercase drop-shadow-[0_6px_24px_rgba(0,0,0,0.95)] leading-tight"
+          className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold tracking-[0.12em] text-white uppercase drop-shadow-[0_6px_24px_rgba(0,0,0,0.95)] leading-tight"
         >
           SKILLS
         </KineticText>
@@ -1188,21 +1188,21 @@ function DualArcShowcase({
       className="relative w-full h-full flex items-center justify-center overflow-hidden select-none px-4 sm:px-8 cursor-grab active:cursor-grabbing"
     >
 
-      {/* Left Headline: WHAT I DO (Horizontal in empty curved pocket, matching skills size) */}
-      <div className="absolute top-1/2 -translate-y-1/2 left-4 sm:left-8 md:left-12 lg:left-16 xl:left-20 z-20 text-left pointer-events-none select-none transition-all duration-300">
+      {/* Left Headline: WHAT I DO */}
+      <div className="absolute top-1/2 -translate-y-1/2 left-6 sm:left-10 md:left-14 lg:left-16 xl:left-24 z-20 text-left pointer-events-none select-none transition-all duration-300">
         <KineticText
           as="h2"
-          className="font-sans text-[clamp(2.25rem,5vw,5.5rem)] font-semibold tracking-[0.15em] text-white uppercase drop-shadow-[0_8px_32px_rgba(0,0,0,0.98)] leading-tight"
+          className="font-sans text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold tracking-[0.12em] text-white uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.98)] leading-tight"
         >
           WHAT I DO
         </KineticText>
       </div>
 
-      {/* Right Headline: PROJECTS (Horizontal in empty curved pocket, matching skills size) */}
-      <div className="absolute top-1/2 -translate-y-1/2 right-4 sm:right-8 md:right-12 lg:right-16 xl:right-20 z-20 text-right pointer-events-none select-none transition-all duration-300">
+      {/* Right Headline: PROJECTS */}
+      <div className="absolute top-1/2 -translate-y-1/2 right-6 sm:right-10 md:right-14 lg:right-16 xl:right-24 z-20 text-right pointer-events-none select-none transition-all duration-300">
         <KineticText
           as="h2"
-          className="font-sans text-[clamp(2.25rem,5vw,5.5rem)] font-semibold tracking-[0.15em] text-white uppercase drop-shadow-[0_8px_32px_rgba(0,0,0,0.98)] leading-tight"
+          className="font-sans text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold tracking-[0.12em] text-white uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.98)] leading-tight"
         >
           PROJECTS
         </KineticText>
