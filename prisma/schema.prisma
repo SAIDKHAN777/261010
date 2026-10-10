@@ -1,0 +1,81 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum NotifyStatus {
+  PENDING
+  SENT
+  PARTIAL
+  FAILED
+}
+
+model Project {
+  id            String   @id @default(cuid())
+  slug          String   @unique @db.VarChar(150)
+  title         String   @db.VarChar(150)
+  summary       String   @db.VarChar(300)
+  description   String   @db.Text
+  coverImageUrl String?  @map("cover_image_url") @db.VarChar(500)
+  repoUrl       String?  @map("repo_url") @db.VarChar(500)
+  liveUrl       String?  @map("live_url") @db.VarChar(500)
+  techStack     String[] @map("tech_stack")
+  featured      Boolean  @default(false)
+  published     Boolean  @default(true)
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt     DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  @@index([createdAt(sort: Desc), id(sort: Desc)], map: "projects_created_at_desc_id_desc_idx")
+  @@index([createdAt(sort: Asc), id(sort: Asc)], map: "projects_created_at_asc_id_asc_idx")
+  @@index([published, featured])
+  @@index([techStack], type: Gin)
+  @@map("projects")
+}
+
+model ContactMessage {
+  id           String       @id @default(cuid())
+  name         String       @db.VarChar(100)
+  email        String       @db.VarChar(254)
+  message      String       @db.VarChar(2000)
+  notifyStatus NotifyStatus @default(PENDING) @map("notify_status")
+  notifiedAt   DateTime?    @map("notified_at") @db.Timestamptz(3)
+  createdAt    DateTime     @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@index([createdAt(sort: Desc), id(sort: Desc)])
+  @@index([notifyStatus])
+  @@map("contact_messages")
+}
+
+model DownloadStat {
+  id        String   @id @default("total")
+  total     Int      @default(0)
+  updatedAt DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  @@map("download_stats")
+}
+
+model CountryStat {
+  countryCode String   @id @map("country_code") @db.VarChar(2)
+  downloads   Int      @default(0)
+  updatedAt   DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  @@index([downloads(sort: Desc)])
+  @@map("country_stats")
+}
+
+model ClientCompany {
+  id        String   @id @default(cuid())
+  name      String
+  logoUrl   String
+  published Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("client_companies")
+}
