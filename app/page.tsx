@@ -167,8 +167,8 @@ const SKILL_ORBS: SkillOrb[] = [
     border: 'border-cyan-500',
     xPct: 74,
     yPct: 46,
-    sizeDesktop: 132,
-    sizeMobile: 84,
+    sizeDesktop: 94,
+    sizeMobile: 64,
     floatSpeedX: 0.9,
     floatSpeedY: 0.8,
     floatAmp: 11,
@@ -189,8 +189,8 @@ const SKILL_ORBS: SkillOrb[] = [
     border: 'border-orange-500',
     xPct: 14,
     yPct: 22,
-    sizeDesktop: 110,
-    sizeMobile: 76,
+    sizeDesktop: 76,
+    sizeMobile: 54,
     floatSpeedX: 0.8,
     floatSpeedY: 1.1,
     floatAmp: 8,
@@ -210,8 +210,8 @@ const SKILL_ORBS: SkillOrb[] = [
     border: 'border-sky-400',
     xPct: 28,
     yPct: 15,
-    sizeDesktop: 104,
-    sizeMobile: 72,
+    sizeDesktop: 74,
+    sizeMobile: 52,
     floatSpeedX: 1.2,
     floatSpeedY: 0.9,
     floatAmp: 7,
@@ -231,8 +231,8 @@ const SKILL_ORBS: SkillOrb[] = [
     border: 'border-amber-500',
     xPct: 22,
     yPct: 38,
-    sizeDesktop: 108,
-    sizeMobile: 74,
+    sizeDesktop: 76,
+    sizeMobile: 54,
     floatSpeedX: 0.9,
     floatSpeedY: 1.3,
     floatAmp: 9,
@@ -252,8 +252,8 @@ const SKILL_ORBS: SkillOrb[] = [
     border: 'border-zinc-300',
     xPct: 10,
     yPct: 50,
-    sizeDesktop: 116,
-    sizeMobile: 78,
+    sizeDesktop: 78,
+    sizeMobile: 56,
     floatSpeedX: 1.1,
     floatSpeedY: 0.8,
     floatAmp: 10,
@@ -273,8 +273,8 @@ const SKILL_ORBS: SkillOrb[] = [
     border: 'border-blue-500',
     xPct: 24,
     yPct: 60,
-    sizeDesktop: 115,
-    sizeMobile: 78,
+    sizeDesktop: 78,
+    sizeMobile: 56,
     floatSpeedX: 0.85,
     floatSpeedY: 1.15,
     floatAmp: 9,
@@ -294,8 +294,8 @@ const SKILL_ORBS: SkillOrb[] = [
     border: 'border-purple-500',
     xPct: 13,
     yPct: 75,
-    sizeDesktop: 106,
-    sizeMobile: 74,
+    sizeDesktop: 74,
+    sizeMobile: 52,
     floatSpeedX: 0.7,
     floatSpeedY: 1.2,
     floatAmp: 8,
@@ -315,8 +315,8 @@ const SKILL_ORBS: SkillOrb[] = [
     border: 'border-emerald-500',
     xPct: 29,
     yPct: 83,
-    sizeDesktop: 112,
-    sizeMobile: 76,
+    sizeDesktop: 76,
+    sizeMobile: 54,
     floatSpeedX: 1.0,
     floatSpeedY: 0.9,
     floatAmp: 9,
@@ -338,8 +338,8 @@ const SKILL_ORBS: SkillOrb[] = [
     border: 'border-pink-500',
     xPct: 67,
     yPct: 26,
-    sizeDesktop: 104,
-    sizeMobile: 72,
+    sizeDesktop: 74,
+    sizeMobile: 52,
     floatSpeedX: 1.3,
     floatSpeedY: 0.7,
     floatAmp: 8,
@@ -359,8 +359,8 @@ const SKILL_ORBS: SkillOrb[] = [
     border: 'border-yellow-500',
     xPct: 87,
     yPct: 32,
-    sizeDesktop: 115,
-    sizeMobile: 78,
+    sizeDesktop: 78,
+    sizeMobile: 56,
     floatSpeedX: 0.8,
     floatSpeedY: 1.2,
     floatAmp: 9,
@@ -380,8 +380,8 @@ const SKILL_ORBS: SkillOrb[] = [
     border: 'border-sky-400',
     xPct: 89,
     yPct: 56,
-    sizeDesktop: 116,
-    sizeMobile: 78,
+    sizeDesktop: 78,
+    sizeMobile: 56,
     floatSpeedX: 1.1,
     floatSpeedY: 1.0,
     floatAmp: 9,
@@ -401,8 +401,8 @@ const SKILL_ORBS: SkillOrb[] = [
     border: 'border-rose-500',
     xPct: 72,
     yPct: 65,
-    sizeDesktop: 115,
-    sizeMobile: 78,
+    sizeDesktop: 78,
+    sizeMobile: 56,
     floatSpeedX: 0.95,
     floatSpeedY: 1.1,
     floatAmp: 9,
@@ -422,8 +422,8 @@ const SKILL_ORBS: SkillOrb[] = [
     border: 'border-red-500',
     xPct: 84,
     yPct: 78,
-    sizeDesktop: 108,
-    sizeMobile: 74,
+    sizeDesktop: 76,
+    sizeMobile: 54,
     floatSpeedX: 0.8,
     floatSpeedY: 1.3,
     floatAmp: 8,
@@ -443,8 +443,8 @@ const SKILL_ORBS: SkillOrb[] = [
     border: 'border-green-500',
     xPct: 59,
     yPct: 84,
-    sizeDesktop: 114,
-    sizeMobile: 78,
+    sizeDesktop: 78,
+    sizeMobile: 56,
     floatSpeedX: 1.2,
     floatSpeedY: 0.9,
     floatAmp: 10,
@@ -723,37 +723,37 @@ function SkillSpheresNetwork({ scrollProgress, opacity }: SkillSpheresNetworkPro
               />
 
               {/* Sphere Content */}
-              <div className="relative z-10 flex flex-col items-center justify-center text-center w-full px-2">
+              <div className="relative z-10 flex flex-col items-center justify-center text-center w-full px-1.5">
                 {/* Authentic Tech Vector Logo */}
                 <div
-                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-2xl flex items-center justify-center mb-1 transition-all duration-200"
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl flex items-center justify-center mb-0.5 transition-all duration-200"
                   style={{
                     color: orb.color,
-                    filter: `drop-shadow(0 2px 5px ${orb.color}60)`,
+                    filter: `drop-shadow(0 2px 4px ${orb.color}60)`,
                   }}
                 >
-                  <Icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11" />
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
 
                 {/* Skill / Technology Name */}
-                <span className="font-sans font-bold text-[11px] sm:text-xs md:text-sm text-zinc-900 leading-tight px-1 drop-shadow-sm">
+                <span className="font-sans font-bold text-[10px] sm:text-[11px] md:text-xs text-zinc-900 leading-tight px-0.5 drop-shadow-sm">
                   {orb.name}
                 </span>
 
                 {/* Subtitle / Category Badge */}
                 <span
                   style={{ color: orb.color }}
-                  className="font-mono text-[9px] sm:text-[10px] font-semibold tracking-wider mt-0.5 uppercase"
+                  className="font-mono text-[7.5px] sm:text-[8.5px] font-semibold tracking-wider mt-0.5 uppercase"
                 >
                   {orb.badge}
                 </span>
 
                 {/* Center Core Pulsing Dot */}
                 {isCenter && (
-                  <div className="mt-1 flex items-center gap-1">
+                  <div className="mt-0.5 flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 animate-ping" />
-                    <span className="font-mono text-[8px] font-bold text-zinc-700 uppercase tracking-widest">
-                      Flagship Hub
+                    <span className="font-mono text-[7px] font-bold text-zinc-700 uppercase tracking-widest">
+                      Core Hub
                     </span>
                   </div>
                 )}
@@ -1685,7 +1685,7 @@ export default function Page() {
       {/* ================================================================
           SLOT 1: MINIMALIST FLOATING TOPBAR / NAVBAR (Z-Index: 50)
           ================================================================ */}
-      <header className="fixed top-0 left-0 right-0 z-50 px-6 sm:px-12 lg:px-20 py-3.5 sm:py-4 flex items-center justify-between transition-all bg-black/90 backdrop-blur-md border-b border-white/[0.08] shadow-[0_8px_30px_rgba(0,0,0,0.85)]">
+      <header className="fixed top-0 left-0 right-0 z-50 px-6 sm:px-12 lg:px-20 py-4 sm:py-5 flex items-center justify-between transition-all bg-gradient-to-b from-black/75 via-black/20 to-transparent pointer-events-auto">
         {/* Left Brand: Serif typography with subtitle matching user reference */}
         <div
           onClick={() => scrollToPercent(0)}
