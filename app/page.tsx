@@ -160,15 +160,15 @@ const SKILL_ORBS: SkillOrb[] = [
   {
     id: 'react-core',
     name: 'React & Next.js',
-    badge: 'Core Architecture',
+    badge: 'CORE ARCH',
     icon: TechIcons.react,
     color: '#06b6d4',
     glow: 'rgba(6, 182, 212, 0.65)',
     border: 'border-cyan-500',
     xPct: 74,
     yPct: 46,
-    sizeDesktop: 94,
-    sizeMobile: 64,
+    sizeDesktop: 106,
+    sizeMobile: 78,
     floatSpeedX: 0.9,
     floatSpeedY: 0.8,
     floatAmp: 11,
@@ -182,15 +182,15 @@ const SKILL_ORBS: SkillOrb[] = [
   {
     id: 'html5',
     name: 'HTML5',
-    badge: 'Semantic Web',
+    badge: 'SEMANTIC',
     icon: TechIcons.html5,
     color: '#ea580c',
     glow: 'rgba(234, 88, 12, 0.55)',
     border: 'border-orange-500',
     xPct: 14,
     yPct: 22,
-    sizeDesktop: 76,
-    sizeMobile: 54,
+    sizeDesktop: 88,
+    sizeMobile: 64,
     floatSpeedX: 0.8,
     floatSpeedY: 1.1,
     floatAmp: 8,
@@ -203,15 +203,15 @@ const SKILL_ORBS: SkillOrb[] = [
   {
     id: 'css3',
     name: 'CSS3',
-    badge: 'Design Systems',
+    badge: 'SYSTEMS',
     icon: TechIcons.css3,
     color: '#0284c7',
     glow: 'rgba(2, 132, 199, 0.55)',
     border: 'border-sky-400',
     xPct: 28,
     yPct: 15,
-    sizeDesktop: 74,
-    sizeMobile: 52,
+    sizeDesktop: 86,
+    sizeMobile: 62,
     floatSpeedX: 1.2,
     floatSpeedY: 0.9,
     floatAmp: 7,
@@ -224,15 +224,15 @@ const SKILL_ORBS: SkillOrb[] = [
   {
     id: 'linux',
     name: 'Linux',
-    badge: 'Cloud & OS',
+    badge: 'SYS / OS',
     icon: TechIcons.linux,
     color: '#d97706',
     glow: 'rgba(217, 119, 6, 0.55)',
     border: 'border-amber-500',
     xPct: 22,
     yPct: 38,
-    sizeDesktop: 76,
-    sizeMobile: 54,
+    sizeDesktop: 86,
+    sizeMobile: 62,
     floatSpeedX: 0.9,
     floatSpeedY: 1.3,
     floatAmp: 9,
@@ -245,15 +245,15 @@ const SKILL_ORBS: SkillOrb[] = [
   {
     id: 'github',
     name: 'GitHub',
-    badge: 'CI/CD & Version',
+    badge: 'CI / CD',
     icon: TechIcons.github,
     color: '#181717',
     glow: 'rgba(24, 23, 23, 0.65)',
     border: 'border-zinc-300',
     xPct: 10,
     yPct: 50,
-    sizeDesktop: 78,
-    sizeMobile: 56,
+    sizeDesktop: 88,
+    sizeMobile: 64,
     floatSpeedX: 1.1,
     floatSpeedY: 0.8,
     floatAmp: 10,
@@ -266,15 +266,15 @@ const SKILL_ORBS: SkillOrb[] = [
   {
     id: 'typescript',
     name: 'TypeScript',
-    badge: 'Type Architecture',
+    badge: 'TYPES',
     icon: TechIcons.typescript,
     color: '#3178c6',
     glow: 'rgba(49, 120, 198, 0.6)',
     border: 'border-blue-500',
     xPct: 24,
     yPct: 60,
-    sizeDesktop: 78,
-    sizeMobile: 56,
+    sizeDesktop: 88,
+    sizeMobile: 64,
     floatSpeedX: 0.85,
     floatSpeedY: 1.15,
     floatAmp: 9,
@@ -287,15 +287,15 @@ const SKILL_ORBS: SkillOrb[] = [
   {
     id: 'bootstrap',
     name: 'Bootstrap',
-    badge: 'UI Framework',
+    badge: 'UI CSS',
     icon: TechIcons.bootstrap,
     color: '#9333ea',
     glow: 'rgba(147, 51, 234, 0.55)',
     border: 'border-purple-500',
     xPct: 13,
     yPct: 75,
-    sizeDesktop: 74,
-    sizeMobile: 52,
+    sizeDesktop: 86,
+    sizeMobile: 62,
     floatSpeedX: 0.7,
     floatSpeedY: 1.2,
     floatAmp: 8,
@@ -308,15 +308,15 @@ const SKILL_ORBS: SkillOrb[] = [
   {
     id: 'mongodb',
     name: 'MongoDB',
-    badge: 'NoSQL Database',
+    badge: 'DATABASE',
     icon: TechIcons.mongodb,
     color: '#059669',
     glow: 'rgba(5, 150, 105, 0.55)',
     border: 'border-emerald-500',
     xPct: 29,
     yPct: 83,
-    sizeDesktop: 76,
-    sizeMobile: 54,
+    sizeDesktop: 88,
+    sizeMobile: 64,
     floatSpeedX: 1.0,
     floatSpeedY: 0.9,
     floatAmp: 9,
@@ -331,15 +331,15 @@ const SKILL_ORBS: SkillOrb[] = [
   {
     id: 'sass',
     name: 'Sass',
-    badge: 'Preprocessor',
+    badge: 'SCSS',
     icon: TechIcons.sass,
     color: '#db2777',
     glow: 'rgba(219, 39, 119, 0.55)',
     border: 'border-pink-500',
     xPct: 67,
     yPct: 26,
-    sizeDesktop: 74,
-    sizeMobile: 52,
+    sizeDesktop: 86,
+    sizeMobile: 62,
     floatSpeedX: 1.3,
     floatSpeedY: 0.7,
     floatAmp: 8,
@@ -352,15 +352,15 @@ const SKILL_ORBS: SkillOrb[] = [
   {
     id: 'javascript',
     name: 'JavaScript',
-    badge: 'Dynamic Web',
+    badge: 'ES6+ WEB',
     icon: TechIcons.javascript,
     color: '#ca8a04',
     glow: 'rgba(202, 138, 4, 0.55)',
     border: 'border-yellow-500',
     xPct: 87,
     yPct: 32,
-    sizeDesktop: 78,
-    sizeMobile: 56,
+    sizeDesktop: 88,
+    sizeMobile: 64,
     floatSpeedX: 0.8,
     floatSpeedY: 1.2,
     floatAmp: 9,
@@ -373,15 +373,15 @@ const SKILL_ORBS: SkillOrb[] = [
   {
     id: 'python',
     name: 'Python',
-    badge: 'AI & Data Engine',
+    badge: 'AI & ML',
     icon: TechIcons.python,
     color: '#0284c7',
     glow: 'rgba(2, 132, 199, 0.55)',
     border: 'border-sky-400',
     xPct: 89,
     yPct: 56,
-    sizeDesktop: 78,
-    sizeMobile: 56,
+    sizeDesktop: 88,
+    sizeMobile: 64,
     floatSpeedX: 1.1,
     floatSpeedY: 1.0,
     floatAmp: 9,
@@ -394,15 +394,15 @@ const SKILL_ORBS: SkillOrb[] = [
   {
     id: 'n8n',
     name: 'n8n',
-    badge: 'AI Automation',
+    badge: 'AUTOMATION',
     icon: TechIcons.n8n,
     color: '#ea4b71',
     glow: 'rgba(234, 75, 113, 0.6)',
     border: 'border-rose-500',
     xPct: 72,
     yPct: 65,
-    sizeDesktop: 78,
-    sizeMobile: 56,
+    sizeDesktop: 88,
+    sizeMobile: 64,
     floatSpeedX: 0.95,
     floatSpeedY: 1.1,
     floatAmp: 9,
@@ -415,15 +415,15 @@ const SKILL_ORBS: SkillOrb[] = [
   {
     id: 'java',
     name: 'Java',
-    badge: 'Enterprise Backend',
+    badge: 'BACKEND',
     icon: TechIcons.java,
     color: '#ef4444',
     glow: 'rgba(239, 68, 68, 0.55)',
     border: 'border-red-500',
     xPct: 84,
     yPct: 78,
-    sizeDesktop: 76,
-    sizeMobile: 54,
+    sizeDesktop: 86,
+    sizeMobile: 62,
     floatSpeedX: 0.8,
     floatSpeedY: 1.3,
     floatAmp: 8,
@@ -436,15 +436,15 @@ const SKILL_ORBS: SkillOrb[] = [
   {
     id: 'nodejs',
     name: 'Node.js',
-    badge: 'Server Runtime',
+    badge: 'RUNTIME',
     icon: TechIcons.nodejs,
     color: '#16a34a',
     glow: 'rgba(22, 163, 74, 0.55)',
     border: 'border-green-500',
     xPct: 59,
     yPct: 84,
-    sizeDesktop: 78,
-    sizeMobile: 56,
+    sizeDesktop: 88,
+    sizeMobile: 64,
     floatSpeedX: 1.2,
     floatSpeedY: 0.9,
     floatAmp: 10,
@@ -457,32 +457,35 @@ const SKILL_ORBS: SkillOrb[] = [
 ];
 
 // ======================================================================
-// KINETIC TYPOGRAPHY COMPONENT (Letter-by-Letter Monochromatic Pop)
+// KINETIC TYPOGRAPHY COMPONENT (Letter-by-Letter Monochromatic Pop / Fule Utha)
 // ======================================================================
 interface KineticTextProps {
   children: string;
   className?: string;
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span' | 'div';
+  variant?: 'light' | 'dark';
 }
 
 function KineticText({
   children,
   className = '',
   as: Component = 'span',
+  variant = 'light',
 }: KineticTextProps) {
   // Split input into words to prevent unnatural mid-word line wraps
   const words = children.split(' ');
+  const charClass = variant === 'dark' ? 'kinetic-char-dark' : 'kinetic-char';
 
   return (
     <Component
-      className={`drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] ${className}`}
+      className={`pointer-events-auto ${className}`}
     >
       {words.map((word, wordIdx) => (
         <span key={wordIdx} className="inline-block whitespace-nowrap">
           {word.split('').map((char, charIdx) => (
             <span
               key={charIdx}
-              className="kinetic-char inline-block text-white transition-transform duration-150 ease-out hover:scale-125 hover:-translate-y-1 select-none will-change-transform cursor-default"
+              className={`${charClass} inline-block select-none will-change-transform cursor-pointer`}
             >
               {char}
             </span>
@@ -495,6 +498,7 @@ function KineticText({
     </Component>
   );
 }
+
 
 // ======================================================================
 // 3D FLOATING SKILL ORBS NETWORK COMPONENT
@@ -708,7 +712,7 @@ function SkillSpheresNetwork({ scrollProgress, opacity }: SkillSpheresNetworkPro
                   ? 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease-out'
                   : 'box-shadow 0.25s ease-out',
               }}
-              className={`absolute rounded-full cursor-pointer flex flex-col items-center justify-center p-3 select-none backdrop-blur-2xl border-2 ${
+              className={`absolute rounded-full cursor-pointer flex flex-col items-center justify-center p-1 sm:p-1.5 select-none backdrop-blur-2xl border-2 ${
                 isHovered ? 'border-white ring-2 ring-white/80' : 'border-white/85 shadow-lg'
               }`}
             >
@@ -723,40 +727,35 @@ function SkillSpheresNetwork({ scrollProgress, opacity }: SkillSpheresNetworkPro
               />
 
               {/* Sphere Content */}
-              <div className="relative z-10 flex flex-col items-center justify-center text-center w-full px-1.5">
+              <div className="relative z-10 flex flex-col items-center justify-center text-center w-full px-1">
                 {/* Authentic Tech Vector Logo */}
                 <div
-                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl flex items-center justify-center mb-0.5 transition-all duration-200"
+                  className="w-5 h-5 sm:w-6 sm:h-6 rounded-xl flex items-center justify-center mb-0.5 transition-all duration-200"
                   style={{
                     color: orb.color,
                     filter: `drop-shadow(0 2px 4px ${orb.color}60)`,
                   }}
                 >
-                  <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
+                  <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
 
-                {/* Skill / Technology Name */}
-                <span className="font-sans font-bold text-[10px] sm:text-[11px] md:text-xs text-zinc-900 leading-tight px-0.5 drop-shadow-sm">
-                  {orb.name}
-                </span>
-
-                {/* Subtitle / Category Badge */}
-                <span
-                  style={{ color: orb.color }}
-                  className="font-mono text-[7.5px] sm:text-[8.5px] font-semibold tracking-wider mt-0.5 uppercase"
+                {/* Skill / Technology Name with Kinetic Char Pop */}
+                <KineticText
+                  variant="dark"
+                  className="font-sans font-bold text-[9px] sm:text-[10px] md:text-[11px] text-zinc-900 leading-tight px-0.5 drop-shadow-sm"
                 >
-                  {orb.badge}
-                </span>
+                  {orb.name}
+                </KineticText>
 
-                {/* Center Core Pulsing Dot */}
-                {isCenter && (
-                  <div className="mt-0.5 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 animate-ping" />
-                    <span className="font-mono text-[7px] font-bold text-zinc-700 uppercase tracking-widest">
-                      Core Hub
-                    </span>
-                  </div>
-                )}
+                {/* Subtitle / Category Badge with Kinetic Char Pop */}
+                <div style={{ color: orb.color }} className="mt-0.5">
+                  <KineticText
+                    variant="dark"
+                    className="font-mono text-[7px] sm:text-[7.5px] font-semibold tracking-wider uppercase"
+                  >
+                    {orb.badge}
+                  </KineticText>
+                </div>
               </div>
             </div>
           );
@@ -1189,7 +1188,7 @@ function DualArcShowcase({
     >
 
       {/* Left Headline: WHAT I DO */}
-      <div className="absolute top-1/2 -translate-y-1/2 left-6 sm:left-10 md:left-14 lg:left-16 xl:left-24 z-20 text-left pointer-events-none select-none transition-all duration-300">
+      <div className="absolute top-1/2 -translate-y-1/2 left-6 sm:left-10 md:left-14 lg:left-16 xl:left-24 z-20 text-left pointer-events-auto select-none transition-all duration-300">
         <KineticText
           as="h2"
           className="font-sans text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold tracking-[0.12em] text-white uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.98)] leading-tight"
@@ -1199,7 +1198,7 @@ function DualArcShowcase({
       </div>
 
       {/* Right Headline: PROJECTS */}
-      <div className="absolute top-1/2 -translate-y-1/2 right-6 sm:right-10 md:right-14 lg:right-16 xl:right-24 z-20 text-right pointer-events-none select-none transition-all duration-300">
+      <div className="absolute top-1/2 -translate-y-1/2 right-6 sm:right-10 md:right-14 lg:right-16 xl:right-24 z-20 text-right pointer-events-auto select-none transition-all duration-300">
         <KineticText
           as="h2"
           className="font-sans text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold tracking-[0.12em] text-white uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.98)] leading-tight"
@@ -1685,17 +1684,17 @@ export default function Page() {
       {/* ================================================================
           SLOT 1: MINIMALIST FLOATING TOPBAR / NAVBAR (Z-Index: 50)
           ================================================================ */}
-      <header className="fixed top-0 left-0 right-0 z-50 px-6 sm:px-12 lg:px-20 py-4 sm:py-5 flex items-center justify-between transition-all bg-gradient-to-b from-black/75 via-black/20 to-transparent pointer-events-auto">
+      <header className="fixed top-0 left-0 right-0 z-50 px-6 sm:px-12 lg:px-20 py-4 sm:py-5 flex items-center justify-between transition-all bg-transparent drop-shadow-[0_4px_16px_rgba(0,0,0,0.55)] pointer-events-auto">
         {/* Left Brand: Serif typography with subtitle matching user reference */}
         <div
           onClick={() => scrollToPercent(0)}
           className="cursor-pointer group select-none flex flex-col justify-center flex-shrink-0"
         >
           <span className="font-serif font-bold text-xl sm:text-2xl text-white tracking-normal group-hover:text-rose-200 transition-colors drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] leading-tight">
-            Said Khan
+            <KineticText>Said Khan</KineticText>
           </span>
           <span className="font-serif text-xs sm:text-[13px] text-zinc-300 font-normal tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] mt-0.5">
-            AI Solutions Architect
+            <KineticText>AI Solutions Architect</KineticText>
           </span>
         </div>
 
@@ -1715,7 +1714,7 @@ export default function Page() {
                   : 'text-zinc-300 hover:text-white'
               }`}
             >
-              Overview
+              <KineticText>Overview</KineticText>
               {activeSection === 'about' && (
                 <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-rose-500 rounded-full shadow-[0_0_10px_rgba(244,63,94,0.9)] transition-all duration-300" />
               )}
@@ -1729,7 +1728,7 @@ export default function Page() {
                   : 'text-zinc-300 hover:text-white'
               }`}
             >
-              Architecture
+              <KineticText>Architecture</KineticText>
               {activeSection === 'skills' && (
                 <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-rose-500 rounded-full shadow-[0_0_10px_rgba(244,63,94,0.9)] transition-all duration-300" />
               )}
@@ -1743,7 +1742,7 @@ export default function Page() {
                   : 'text-zinc-300 hover:text-white'
               }`}
             >
-              Projects
+              <KineticText>Projects</KineticText>
               {activeSection === 'projects' && (
                 <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-rose-500 rounded-full shadow-[0_0_10px_rgba(244,63,94,0.9)] transition-all duration-300" />
               )}
@@ -1757,7 +1756,7 @@ export default function Page() {
                   : 'text-zinc-300 hover:text-white'
               }`}
             >
-              About Me
+              <KineticText>About Me</KineticText>
               {activeSection === 'contact' && (
                 <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-rose-500 rounded-full shadow-[0_0_10px_rgba(244,63,94,0.9)] transition-all duration-300" />
               )}
@@ -1769,7 +1768,7 @@ export default function Page() {
             onClick={() => setIsConsultationOpen(true)}
             className="font-serif px-4 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold text-white bg-[#e11d48] hover:bg-[#f43f5e] rounded-[3px] shadow-[0_0_15px_rgba(225,29,72,0.45)] hover:shadow-[0_0_22px_rgba(225,29,72,0.75)] active:scale-95 transition-all duration-200 flex items-center justify-center cursor-pointer whitespace-nowrap"
           >
-            Consultation
+            <KineticText>Consultation</KineticText>
           </button>
         </div>
       </header>
@@ -1834,16 +1833,16 @@ export default function Page() {
               {/* Narrative Bio Paragraphs */}
               <div className="space-y-3 sm:space-y-3.5 max-w-xl lg:max-w-2xl">
                 <p className="text-sm sm:text-base md:text-lg lg:text-[18px] text-zinc-100 font-normal leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-                  I&apos;m an AI Engineer, AI Automation Expert, and Full-Stack Developer. I use AI and modern technology to turn ideas into practical, intelligent, and reliable digital solutions.
+                  <KineticText>I&apos;m an AI Engineer, AI Automation Expert, and Full-Stack Developer. I use AI and modern technology to turn ideas into practical, intelligent, and reliable digital solutions.</KineticText>
                 </p>
                 <p className="text-sm sm:text-base md:text-lg lg:text-[18px] text-zinc-100 font-normal leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-                  I build AI-powered software, automation systems, full-stack applications, and personal AI agents. What I enjoy most is understanding a real problem, finding a smarter approach, and turning that idea into something people can actually use.
+                  <KineticText>I build AI-powered software, automation systems, full-stack applications, and personal AI agents. What I enjoy most is understanding a real problem, finding a smarter approach, and turning that idea into something people can actually use.</KineticText>
                 </p>
                 <p className="text-sm sm:text-base md:text-lg lg:text-[18px] text-zinc-100 font-normal leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-                  Alongside software and AI, I have experience in Digital Marketing, which gives me a broader perspective on technology, business, and people. I believe great technology isn&apos;t just about making something work; it&apos;s about creating something that genuinely adds value.
+                  <KineticText>Alongside software and AI, I have experience in Digital Marketing, which gives me a broader perspective on technology, business, and people. I believe great technology isn&apos;t just about making something work; it&apos;s about creating something that genuinely adds value.</KineticText>
                 </p>
                 <p className="text-sm sm:text-base md:text-lg lg:text-[18px] text-zinc-100 font-normal leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-                  If you have an idea, I&apos;d love to help turn it into something real.
+                  <KineticText>If you have an idea, I&apos;d love to help turn it into something real.</KineticText>
                 </p>
               </div>
 

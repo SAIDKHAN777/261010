@@ -101,13 +101,23 @@ export default function AboutContactSection() {
           <div className="flex flex-col justify-center text-left w-full max-w-[460px] xl:max-w-[510px] 2xl:max-w-[540px]">
             {/* Eyebrow */}
             <span className="font-mono text-[13px] sm:text-[14px] tracking-[0.2em] text-[#ff8aa3] uppercase font-semibold mb-2.5 sm:mb-3 block drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-              GET IN TOUCH
+              {"GET IN TOUCH".split('').map((c, i) => (
+                <span key={i} className="kinetic-char inline-block">{c === ' ' ? '\u00A0' : c}</span>
+              ))}
             </span>
 
             {/* H1 - Crisp, Elegant, Roomy Distance between Lines */}
             <h1 className="font-serif font-bold text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] 2xl:text-[52px] leading-tight text-white mb-4 sm:mb-5 drop-shadow-[0_4px_24px_rgba(0,0,0,0.98)] drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] flex flex-col gap-3 sm:gap-4">
-              <span>Have an idea?</span>
-              <span>Let&apos;s build it.</span>
+              <span>
+                {"Have an idea?".split('').map((c, i) => (
+                  <span key={i} className="kinetic-char inline-block">{c === ' ' ? '\u00A0' : c}</span>
+                ))}
+              </span>
+              <span>
+                {"Let's build it.".split('').map((c, i) => (
+                  <span key={i} className="kinetic-char inline-block">{c === ' ' ? '\u00A0' : c}</span>
+                ))}
+              </span>
             </h1>
 
             {/* Paragraph */}
@@ -222,7 +232,9 @@ export default function AboutContactSection() {
           <div className="w-full max-w-[420px] min-[981px]:max-w-[480px] xl:max-w-[510px] 2xl:max-w-[540px] ml-auto justify-self-end py-2 sm:py-3 mt-1 sm:mt-2">
             {/* Title & Subtext - Clear headroom below topbar */}
             <h2 className="font-serif text-[28px] sm:text-[32px] font-bold text-white leading-tight">
-              Start your project
+              {"Start your project".split('').map((c, i) => (
+                <span key={i} className="kinetic-char inline-block">{c === ' ' ? '\u00A0' : c}</span>
+              ))}
             </h2>
             <p className="font-body text-[14px] sm:text-[15px] text-[#d9c3ca] mt-1 mb-4 sm:mb-5">
               Takes about a minute.
