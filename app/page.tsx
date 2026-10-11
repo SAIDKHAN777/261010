@@ -1747,20 +1747,6 @@ export default function Page() {
                 <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-rose-500 rounded-full shadow-[0_0_10px_rgba(244,63,94,0.9)] transition-all duration-300" />
               )}
             </button>
-            <button
-              onClick={() => scrollToPercent(1.0)}
-              aria-current={activeSection === 'contact' ? 'page' : undefined}
-              className={`relative py-1 font-serif text-sm sm:text-base md:text-[17px] tracking-normal transition-all duration-200 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] ${
-                activeSection === 'contact'
-                  ? 'text-white font-semibold'
-                  : 'text-zinc-300 hover:text-white'
-              }`}
-            >
-              <KineticText>About Me</KineticText>
-              {activeSection === 'contact' && (
-                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-rose-500 rounded-full shadow-[0_0_10px_rgba(244,63,94,0.9)] transition-all duration-300" />
-              )}
-            </button>
           </nav>
 
           {/* Crimson Consultation Button */}
