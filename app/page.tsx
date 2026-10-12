@@ -1973,7 +1973,7 @@ export default function Page() {
         {/* ==============================================================
             BOTTOM TELEMETRY HUD (Frame Counter & Scrub Status)
             ============================================================== */}
-        <footer className="w-full px-6 lg:px-12 py-5 flex items-center justify-between pointer-events-auto">
+        <footer className="hidden" aria-hidden="true">
           {/* Left Telemetry */}
           <div className="flex items-center gap-4 font-mono text-[11px] text-zinc-400 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
             <span className="hidden sm:inline-block">
