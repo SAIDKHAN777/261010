@@ -1072,7 +1072,7 @@ function DualArcShowcase({
   // Dense continuous packaging with no empty gaps right from the start/top edge
   const displayLeftItems = useMemo(() => {
     if (leftItems.length === 0) return [];
-    const source = leftItems.length < 10 ? [...leftItems, ...leftItems] : leftItems;
+    const source = leftItems.length < 6 ? [...leftItems, ...leftItems] : leftItems;
     return source.map((item, idx) => ({
       item,
       uniqueKey: `left-${item.id}-${idx}`,
@@ -1081,7 +1081,7 @@ function DualArcShowcase({
 
   const displayRightItems = useMemo(() => {
     if (rightItems.length === 0) return [];
-    const source = rightItems.length < 10 ? [...rightItems, ...rightItems] : rightItems;
+    const source = rightItems.length < 6 ? [...rightItems, ...rightItems] : rightItems;
     return source.map((item, idx) => ({
       item,
       uniqueKey: `right-${item.id}-${idx}`,
@@ -1231,9 +1231,9 @@ function DualArcShowcase({
                   isSelected || isHovered ? 0 : card.rotationDeg
                 }deg) scale(${
                   isSelected
-                    ? card.scale * 1.25
+                    ? card.scale * 1.55
                     : isHovered
-                    ? card.scale * 1.18
+                    ? card.scale * 1.45
                     : card.scale
                 })`,
                 opacity: isSelected || isHovered ? 1 : card.opacity,
@@ -1253,16 +1253,16 @@ function DualArcShowcase({
                   : isHovered
                   ? `0 0 18px ${card.item.color}50, 0 8px 16px rgba(0,0,0,0.5)`
                   : '0 6px 14px rgba(0,0,0,0.4)',
-                zIndex: isSelected ? 40 : isHovered ? 35 : card.zIndex,
+                zIndex: isSelected ? 50 : isHovered ? 45 : card.zIndex,
                 willChange: 'transform, opacity',
               }}
-              className="absolute rounded-2xl border backdrop-blur-xl flex items-center justify-center transition-transform duration-150 cursor-pointer select-none group overflow-hidden"
+              className="absolute rounded-2xl border backdrop-blur-xl flex items-center justify-center transition-all duration-250 ease-out cursor-pointer select-none group overflow-hidden"
             >
               {card.item.imageUrl ? (
                 <img
                   src={card.item.imageUrl}
                   alt={card.item.title}
-                  className="w-full h-full object-cover rounded-2xl"
+                  className="w-full h-full object-contain p-2 rounded-2xl transition-transform duration-250 group-hover:scale-110"
                   loading="lazy"
                 />
               ) : (
@@ -1302,9 +1302,9 @@ function DualArcShowcase({
                   isSelected || isHovered ? 0 : card.rotationDeg
                 }deg) scale(${
                   isSelected
-                    ? card.scale * 1.25
+                    ? card.scale * 1.55
                     : isHovered
-                    ? card.scale * 1.18
+                    ? card.scale * 1.45
                     : card.scale
                 })`,
                 opacity: isSelected || isHovered ? 1 : card.opacity,
@@ -1324,16 +1324,16 @@ function DualArcShowcase({
                   : isHovered
                   ? `0 0 18px ${card.item.color}50, 0 8px 16px rgba(0,0,0,0.5)`
                   : '0 6px 14px rgba(0,0,0,0.4)',
-                zIndex: isSelected ? 40 : isHovered ? 35 : card.zIndex,
+                zIndex: isSelected ? 50 : isHovered ? 45 : card.zIndex,
                 willChange: 'transform, opacity',
               }}
-              className="absolute rounded-2xl border backdrop-blur-xl flex items-center justify-center transition-transform duration-150 cursor-pointer select-none group overflow-hidden"
+              className="absolute rounded-2xl border backdrop-blur-xl flex items-center justify-center transition-all duration-250 ease-out cursor-pointer select-none group overflow-hidden"
             >
               {card.item.imageUrl ? (
                 <img
                   src={card.item.imageUrl}
                   alt={card.item.title}
-                  className="w-full h-full object-cover rounded-2xl"
+                  className="w-full h-full object-contain p-2 rounded-2xl transition-transform duration-250 group-hover:scale-110"
                   loading="lazy"
                 />
               ) : (
