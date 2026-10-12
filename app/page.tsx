@@ -1368,7 +1368,7 @@ function DualArcShowcase({
                   <img
                     src={card.item.imageUrl}
                     alt={card.item.title}
-                    className="w-full h-full object-contain p-2 rounded-2xl transition-transform duration-300 ease-out group-hover:scale-115 pointer-events-none"
+                    className="w-full h-full object-cover rounded-2xl transition-transform duration-300 ease-out group-hover:scale-115 pointer-events-none"
                     loading="lazy"
                   />
                 ) : (
