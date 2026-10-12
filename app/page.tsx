@@ -1232,7 +1232,12 @@ function DualArcShowcase({
               className="absolute pointer-events-none flex items-center justify-center"
             >
               <button
-                onClick={() => setSelectedId((prev) => (prev === card.item.id ? null : card.item.id))}
+                onClick={() => {
+                  setSelectedId((prev) => (prev === card.item.id ? null : card.item.id));
+                  if (card.item.link) {
+                    window.open(card.item.link, '_blank', 'noopener,noreferrer');
+                  }
+                }}
                 onMouseEnter={() => setHoveredId(card.uniqueKey)}
                 onMouseLeave={() => setHoveredId(null)}
                 aria-label={card.item.title}
@@ -1316,7 +1321,12 @@ function DualArcShowcase({
               className="absolute pointer-events-none flex items-center justify-center"
             >
               <button
-                onClick={() => setSelectedId((prev) => (prev === card.item.id ? null : card.item.id))}
+                onClick={() => {
+                  setSelectedId((prev) => (prev === card.item.id ? null : card.item.id));
+                  if (card.item.link) {
+                    window.open(card.item.link, '_blank', 'noopener,noreferrer');
+                  }
+                }}
                 onMouseEnter={() => setHoveredId(card.uniqueKey)}
                 onMouseLeave={() => setHoveredId(null)}
                 aria-label={card.item.title}
