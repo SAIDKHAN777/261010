@@ -7,47 +7,39 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
-    const supabaseKey = process.env.SUPABASE_ANON_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-    // 1. Fetch What I Do items from Supabase what_i_do table
+    // 1. Fetch What I Do items directly from Supabase PostgreSQL database via Prisma
     let leftArcItems: ShowcaseItem[] = [];
-    if (supabaseUrl && supabaseKey) {
-      try {
-        const widRes = await fetch(`${supabaseUrl}/rest/v1/what_i_do?order=display_order.asc`, {
-          headers: {
-            apikey: supabaseKey,
-            Authorization: `Bearer ${supabaseKey}`,
-          },
-          cache: 'no-store',
-        });
-        if (widRes.ok) {
-          const widData = await widRes.json();
-          if (Array.isArray(widData) && widData.length > 0) {
-            leftArcItems = widData.map((row: any, idx: number) => ({
-              id: row.id || `wid-${idx}`,
-              side: 'left',
-              title: row.title,
-              category: row.category || 'Core Specialization',
-              badge: row.badge || 'Active Service',
-              color: row.color || '#f43f5e',
-              iconName: row.icon_name || 'Bot',
-              imageUrl: row.image_url || '',
-              summary: row.summary || '',
-              metric: row.metric || '100%',
-              metricLabel: row.metric_label || 'Quality',
-              techs: Array.isArray(row.techs) ? row.techs : ['AI', 'Engineering'],
-              link: row.link || undefined,
-              status: 'Active',
-              displayOrder: row.display_order ?? idx + 1,
-            }));
-          }
-        }
-      } catch (e) {
-        console.warn('Failed to fetch what_i_do:', e);
+    try {
+      const widRows: any[] = await prisma.$queryRawUnsafe(`
+        SELECT id, title, summary, image_url, badge, category, color, icon_name, metric, metric_label, techs, display_order 
+        FROM what_i_do 
+        ORDER BY display_order ASC
+      `);
+
+      if (Array.isArray(widRows) && widRows.length > 0) {
+        leftArcItems = widRows.map((row: any, idx: number) => ({
+          id: String(row.id || `wid-${idx}`),
+          side: 'left',
+          title: String(row.title || 'Specialized Service'),
+          category: String(row.category || 'Core Specialization'),
+          badge: String(row.badge || 'Active Service'),
+          color: String(row.color || '#f43f5e'),
+          iconName: String(row.icon_name || 'Bot'),
+          imageUrl: String(row.image_url || ''),
+          summary: String(row.summary || ''),
+          metric: String(row.metric || '100%'),
+          metricLabel: String(row.metric_label || 'Quality'),
+          techs: Array.isArray(row.techs) && row.techs.length > 0 ? row.techs : ['AI', 'Engineering'],
+          link: row.link ? String(row.link) : undefined,
+          status: 'Active',
+          displayOrder: typeof row.display_order === 'number' ? row.display_order : idx + 1,
+        }));
       }
+    } catch (e) {
+      console.warn('Failed to fetch what_i_do via Prisma:', e);
     }
 
+    // Fallback only if database what_i_do table is empty
     if (leftArcItems.length === 0) {
       leftArcItems = DEFAULT_SHOWCASE_ITEMS.filter((item) => item.side === 'left');
     }
@@ -80,7 +72,7 @@ export async function GET() {
         }));
       }
     } catch (e) {
-      console.warn('Failed to fetch projects:', e);
+      console.warn('Failed to fetch projects via Prisma:', e);
     }
 
     if (rightArcItems.length === 0) {
