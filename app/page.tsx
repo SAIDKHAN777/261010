@@ -1208,7 +1208,7 @@ function DualArcShowcase({
       </div>
 
       {/* Left Curved Revolving Cards Wheel */}
-      <div className="absolute inset-0 pointer-events-auto z-10">
+      <div className="absolute inset-0 pointer-events-none z-10">
         {leftCalculated.map((card) => {
           const isSelected = selectedId === card.item.id;
           const isHovered = hoveredId === card.uniqueKey;
@@ -1216,70 +1216,83 @@ function DualArcShowcase({
             (card.item.iconName && SHOWCASE_ICON_MAP[card.item.iconName]) || Sparkles;
 
           return (
-            <button
+            <div
               key={card.uniqueKey}
-              onClick={() => setSelectedId((prev) => (prev === card.item.id ? null : card.item.id))}
-              onMouseEnter={() => setHoveredId(card.uniqueKey)}
-              onMouseLeave={() => setHoveredId(null)}
-              aria-label={card.item.title}
               style={{
                 left: `${card.xPct}%`,
                 top: `${card.yPct}%`,
                 width: `${cardSizePx}px`,
                 height: `${cardSizePx}px`,
-                transform: `translate(-50%, -50%) rotate(${
-                  isSelected || isHovered ? 0 : card.rotationDeg
-                }deg) scale(${
-                  isSelected
-                    ? card.scale * 1.55
-                    : isHovered
-                    ? card.scale * 1.45
-                    : card.scale
-                })`,
+                transform: 'translate(-50%, -50%)',
                 opacity: isSelected || isHovered ? 1 : card.opacity,
+                zIndex: isSelected ? 60 : isHovered ? 50 : card.zIndex,
                 pointerEvents: card.opacity < 0.05 ? 'none' : 'auto',
-                backgroundColor: isSelected
-                  ? 'rgba(255, 255, 255, 0.96)'
-                  : isHovered
-                  ? 'rgba(255, 255, 255, 0.90)'
-                  : 'rgba(15, 15, 20, 0.88)',
-                borderColor: isSelected
-                  ? card.item.color
-                  : isHovered
-                  ? 'rgba(255, 255, 255, 0.6)'
-                  : 'rgba(255, 255, 255, 0.20)',
-                boxShadow: isSelected
-                  ? `0 0 28px ${card.item.color}85, 0 12px 24px rgba(0,0,0,0.7)`
-                  : isHovered
-                  ? `0 0 18px ${card.item.color}50, 0 8px 16px rgba(0,0,0,0.5)`
-                  : '0 6px 14px rgba(0,0,0,0.4)',
-                zIndex: isSelected ? 50 : isHovered ? 45 : card.zIndex,
-                willChange: 'transform, opacity',
+                willChange: 'transform, left, top',
               }}
-              className="absolute rounded-2xl border backdrop-blur-xl flex items-center justify-center transition-all duration-250 ease-out cursor-pointer select-none group overflow-hidden"
+              className="absolute pointer-events-none flex items-center justify-center"
             >
-              {card.item.imageUrl ? (
-                <img
-                  src={card.item.imageUrl}
-                  alt={card.item.title}
-                  className="w-full h-full object-contain p-2 rounded-2xl transition-transform duration-250 group-hover:scale-110"
-                  loading="lazy"
-                />
-              ) : (
-                <Icon
-                  className={`${iconSizeClass} transition-transform duration-200 group-hover:scale-110`}
-                  style={{
-                    color: isSelected ? '#000000' : card.item.color,
-                  }}
-                />
-              )}
-            </button>
+              <button
+                onClick={() => setSelectedId((prev) => (prev === card.item.id ? null : card.item.id))}
+                onMouseEnter={() => setHoveredId(card.uniqueKey)}
+                onMouseLeave={() => setHoveredId(null)}
+                aria-label={card.item.title}
+                title={card.item.title}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  transform: `rotate(${
+                    isSelected || isHovered ? 0 : card.rotationDeg
+                  }deg) scale(${
+                    isSelected
+                      ? card.scale * 1.6
+                      : isHovered
+                      ? card.scale * 1.55
+                      : card.scale
+                  })`,
+                  backgroundColor: isSelected
+                    ? 'rgba(255, 255, 255, 0.96)'
+                    : isHovered
+                    ? 'rgba(24, 24, 34, 0.95)'
+                    : 'rgba(15, 15, 20, 0.88)',
+                  borderColor: isSelected
+                    ? card.item.color
+                    : isHovered
+                    ? (card.item.color || '#f43f5e')
+                    : 'rgba(255, 255, 255, 0.20)',
+                  boxShadow: isSelected
+                    ? `0 0 35px ${card.item.color}90, 0 16px 32px rgba(0,0,0,0.85)`
+                    : isHovered
+                    ? `0 0 28px ${card.item.color || '#f43f5e'}80, 0 12px 24px rgba(0,0,0,0.7)`
+                    : '0 6px 14px rgba(0,0,0,0.4)',
+                  transition:
+                    'transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 300ms ease, border-color 300ms ease, background-color 300ms ease',
+                  willChange: 'transform',
+                }}
+                className="pointer-events-auto rounded-2xl border backdrop-blur-xl flex items-center justify-center cursor-pointer select-none group overflow-hidden"
+              >
+                {card.item.imageUrl ? (
+                  <img
+                    src={card.item.imageUrl}
+                    alt={card.item.title}
+                    className="w-full h-full object-contain p-2 rounded-2xl transition-transform duration-300 ease-out group-hover:scale-115 pointer-events-none"
+                    loading="lazy"
+                  />
+                ) : (
+                  <Icon
+                    className={`${iconSizeClass} transition-transform duration-300 ease-out group-hover:scale-115 pointer-events-none`}
+                    style={{
+                      color: isSelected ? '#000000' : card.item.color,
+                    }}
+                  />
+                )}
+              </button>
+            </div>
           );
         })}
       </div>
 
       {/* Right Curved Revolving Cards Wheel */}
-      <div className="absolute inset-0 pointer-events-auto z-10">
+      <div className="absolute inset-0 pointer-events-none z-10">
         {rightCalculated.map((card) => {
           const isSelected = selectedId === card.item.id;
           const isHovered = hoveredId === card.uniqueKey;
@@ -1287,64 +1300,77 @@ function DualArcShowcase({
             (card.item.iconName && SHOWCASE_ICON_MAP[card.item.iconName]) || Sparkles;
 
           return (
-            <button
+            <div
               key={card.uniqueKey}
-              onClick={() => setSelectedId((prev) => (prev === card.item.id ? null : card.item.id))}
-              onMouseEnter={() => setHoveredId(card.uniqueKey)}
-              onMouseLeave={() => setHoveredId(null)}
-              aria-label={card.item.title}
               style={{
                 left: `${card.xPct}%`,
                 top: `${card.yPct}%`,
                 width: `${cardSizePx}px`,
                 height: `${cardSizePx}px`,
-                transform: `translate(-50%, -50%) rotate(${
-                  isSelected || isHovered ? 0 : card.rotationDeg
-                }deg) scale(${
-                  isSelected
-                    ? card.scale * 1.55
-                    : isHovered
-                    ? card.scale * 1.45
-                    : card.scale
-                })`,
+                transform: 'translate(-50%, -50%)',
                 opacity: isSelected || isHovered ? 1 : card.opacity,
+                zIndex: isSelected ? 60 : isHovered ? 50 : card.zIndex,
                 pointerEvents: card.opacity < 0.05 ? 'none' : 'auto',
-                backgroundColor: isSelected
-                  ? 'rgba(255, 255, 255, 0.96)'
-                  : isHovered
-                  ? 'rgba(255, 255, 255, 0.90)'
-                  : 'rgba(15, 15, 20, 0.88)',
-                borderColor: isSelected
-                  ? card.item.color
-                  : isHovered
-                  ? 'rgba(255, 255, 255, 0.6)'
-                  : 'rgba(255, 255, 255, 0.20)',
-                boxShadow: isSelected
-                  ? `0 0 28px ${card.item.color}85, 0 12px 24px rgba(0,0,0,0.7)`
-                  : isHovered
-                  ? `0 0 18px ${card.item.color}50, 0 8px 16px rgba(0,0,0,0.5)`
-                  : '0 6px 14px rgba(0,0,0,0.4)',
-                zIndex: isSelected ? 50 : isHovered ? 45 : card.zIndex,
-                willChange: 'transform, opacity',
+                willChange: 'transform, left, top',
               }}
-              className="absolute rounded-2xl border backdrop-blur-xl flex items-center justify-center transition-all duration-250 ease-out cursor-pointer select-none group overflow-hidden"
+              className="absolute pointer-events-none flex items-center justify-center"
             >
-              {card.item.imageUrl ? (
-                <img
-                  src={card.item.imageUrl}
-                  alt={card.item.title}
-                  className="w-full h-full object-contain p-2 rounded-2xl transition-transform duration-250 group-hover:scale-110"
-                  loading="lazy"
-                />
-              ) : (
-                <Icon
-                  className={`${iconSizeClass} transition-transform duration-200 group-hover:scale-110`}
-                  style={{
-                    color: isSelected ? '#000000' : card.item.color,
-                  }}
-                />
-              )}
-            </button>
+              <button
+                onClick={() => setSelectedId((prev) => (prev === card.item.id ? null : card.item.id))}
+                onMouseEnter={() => setHoveredId(card.uniqueKey)}
+                onMouseLeave={() => setHoveredId(null)}
+                aria-label={card.item.title}
+                title={card.item.title}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  transform: `rotate(${
+                    isSelected || isHovered ? 0 : card.rotationDeg
+                  }deg) scale(${
+                    isSelected
+                      ? card.scale * 1.6
+                      : isHovered
+                      ? card.scale * 1.55
+                      : card.scale
+                  })`,
+                  backgroundColor: isSelected
+                    ? 'rgba(255, 255, 255, 0.96)'
+                    : isHovered
+                    ? 'rgba(24, 24, 34, 0.95)'
+                    : 'rgba(15, 15, 20, 0.88)',
+                  borderColor: isSelected
+                    ? card.item.color
+                    : isHovered
+                    ? (card.item.color || '#f43f5e')
+                    : 'rgba(255, 255, 255, 0.20)',
+                  boxShadow: isSelected
+                    ? `0 0 35px ${card.item.color}90, 0 16px 32px rgba(0,0,0,0.85)`
+                    : isHovered
+                    ? `0 0 28px ${card.item.color || '#f43f5e'}80, 0 12px 24px rgba(0,0,0,0.7)`
+                    : '0 6px 14px rgba(0,0,0,0.4)',
+                  transition:
+                    'transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 300ms ease, border-color 300ms ease, background-color 300ms ease',
+                  willChange: 'transform',
+                }}
+                className="pointer-events-auto rounded-2xl border backdrop-blur-xl flex items-center justify-center cursor-pointer select-none group overflow-hidden"
+              >
+                {card.item.imageUrl ? (
+                  <img
+                    src={card.item.imageUrl}
+                    alt={card.item.title}
+                    className="w-full h-full object-contain p-2 rounded-2xl transition-transform duration-300 ease-out group-hover:scale-115 pointer-events-none"
+                    loading="lazy"
+                  />
+                ) : (
+                  <Icon
+                    className={`${iconSizeClass} transition-transform duration-300 ease-out group-hover:scale-115 pointer-events-none`}
+                    style={{
+                      color: isSelected ? '#000000' : card.item.color,
+                    }}
+                  />
+                )}
+              </button>
+            </div>
           );
         })}
       </div>
