@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas-deep: #0a0a0a;
+    --surface-base: #0f0f0f;
+    --surface-elevated: #171717;
+    --accent-crimson: #dc2626;
+    --accent-emerald: #dc2626;
+    --accent-cyan: #dc2626;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-active: rgba(220, 38, 38, 0.4);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    background-color: var(--canvas-deep);
+  }
+
+  body {
+    background-color: var(--canvas-deep);
+    color: #E2E8F0;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Accessible Focus Rings with Crimson Accent */
+  *:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--canvas-deep), 0 0 0 4px var(--accent-crimson);
+  }
+
+  /* Custom Crisp Telemetry Scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3f3f46;
+  }
+
+  /* Motion Reduction Support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Architectural Grid Background */
+  .bg-grid-subtle {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+
+  .bg-grid-radial-fade {
+    mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+  }
+}
