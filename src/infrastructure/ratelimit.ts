@@ -5,30 +5,48 @@ import {
   ServiceUnavailableError,
 } from "../lib/errors";
 
-const contactRatelimit = new Ratelimit({
-  redis,
-  limiter: Ratelimit.slidingWindow(3, "1 h"),
-  prefix: "rl:contact",
-  analytics: false,
-});
+let contactRatelimit: Ratelimit | null = null;
+function getContactRatelimit(): Ratelimit {
+  if (!contactRatelimit) {
+    contactRatelimit = new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(3, "1 h"),
+      prefix: "rl:contact",
+      analytics: false,
+    });
+  }
+  return contactRatelimit;
+}
 
-const chatRatelimit = new Ratelimit({
-  redis,
-  limiter: Ratelimit.slidingWindow(10, "1 h"),
-  prefix: "rl:chat",
-  analytics: false,
-});
+let chatRatelimit: Ratelimit | null = null;
+function getChatRatelimit(): Ratelimit {
+  if (!chatRatelimit) {
+    chatRatelimit = new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(10, "1 h"),
+      prefix: "rl:chat",
+      analytics: false,
+    });
+  }
+  return chatRatelimit;
+}
 
-const cvDownloadRatelimit = new Ratelimit({
-  redis,
-  limiter: Ratelimit.slidingWindow(30, "1 h"),
-  prefix: "rl:cv",
-  analytics: false,
-});
+let cvDownloadRatelimit: Ratelimit | null = null;
+function getCvDownloadRatelimit(): Ratelimit {
+  if (!cvDownloadRatelimit) {
+    cvDownloadRatelimit = new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(30, "1 h"),
+      prefix: "rl:cv",
+      analytics: false,
+    });
+  }
+  return cvDownloadRatelimit;
+}
 
 export async function checkContactRateLimit(ipHash: string): Promise<void> {
   try {
-    const result = await contactRatelimit.limit(ipHash);
+    const result = await getContactRatelimit().limit(ipHash);
     if (!result.success) {
       throw new RateLimitExceededError(
         "Contact submission rate limit exceeded. Please try again later."
@@ -38,43 +56,47 @@ export async function checkContactRateLimit(ipHash: string): Promise<void> {
     if (error instanceof RateLimitExceededError) {
       throw error;
     }
-    // Fail open: log safe operational metadata and continue
-    console.error("[RateLimit] Contact rate limit unavailable, failing open");
+    console.error("[RateLimit] Upstash Redis error for contact:", error);
+    throw new ServiceUnavailableError(
+      "Service temporarily unavailable. Please try again."
+    );
   }
 }
 
 export async function checkChatRateLimit(ipHash: string): Promise<void> {
   try {
-    const result = await chatRatelimit.limit(ipHash);
+    const result = await getChatRatelimit().limit(ipHash);
     if (!result.success) {
       throw new RateLimitExceededError(
-        "Chat rate limit exceeded. Please try again later."
+        "AI chat rate limit exceeded (10 messages/hour). Please try again later."
       );
     }
   } catch (error) {
     if (error instanceof RateLimitExceededError) {
       throw error;
     }
-    // Fail closed: log safe operational metadata and reject with 503
-    console.error("[RateLimit] Chat rate limit unavailable, failing closed");
+    console.error("[RateLimit] Upstash Redis error for chat:", error);
     throw new ServiceUnavailableError(
-      "Chat service is temporarily unavailable. Please try again shortly."
+      "AI assistant is temporarily unavailable. Please try again later."
     );
   }
 }
 
 export async function checkCvDownloadRateLimit(ipHash: string): Promise<void> {
   try {
-    const result = await cvDownloadRatelimit.limit(ipHash);
+    const result = await getCvDownloadRatelimit().limit(ipHash);
     if (!result.success) {
       throw new RateLimitExceededError(
-        "Download rate limit exceeded. Please try again later."
+        "CV download rate limit exceeded. Please try again later."
       );
     }
   } catch (error) {
     if (error instanceof RateLimitExceededError) {
       throw error;
     }
-    console.error("[RateLimit] CV download rate limit unavailable, failing open");
+    console.error("[RateLimit] Upstash Redis error for CV download:", error);
+    throw new ServiceUnavailableError(
+      "Download service temporarily unavailable. Please try again later."
+    );
   }
 }

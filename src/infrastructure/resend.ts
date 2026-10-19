@@ -1,7 +1,14 @@
 import { Resend } from "resend";
 import { env } from "../lib/env";
 
-const resend = new Resend(env.RESEND_API_KEY);
+let resendInstance: Resend | null = null;
+
+function getResend(): Resend {
+  if (!resendInstance) {
+    resendInstance = new Resend(env.RESEND_API_KEY);
+  }
+  return resendInstance;
+}
 
 export async function sendEmailNotification(
   name: string,
@@ -9,7 +16,8 @@ export async function sendEmailNotification(
   message: string
 ): Promise<boolean> {
   try {
-    const { error } = await resend.emails.send({
+    const client = getResend();
+    const { error } = await client.emails.send({
       from: env.EMAIL_FROM,
       to: [env.EMAIL_FROM],
       subject: `New Portfolio Contact Message from ${name}`,
